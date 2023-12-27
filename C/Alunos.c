@@ -63,7 +63,9 @@ void cadastro(){
         printf("\nQual cod do aluno? ");
         scanf("%d",&dados_endereco_aluno.dados_aluno[i].codigo_aluno);
         fflush(stdin);
-        printf("%d",dados_endereco_aluno.dados_aluno[i].codigo_aluno);
+        printf("\nQual o nome do aluno? ");
+        scanf("%s",&dados_endereco_aluno.dados_aluno[i].nome);
+        fflush(stdin);
         }
     inicio();
     }else if (numCadastro>5)
@@ -80,7 +82,8 @@ void consulta(){
     for (i = 0; i < 5; i++)
     {
         if(cod_busca==dados_endereco_aluno.dados_aluno[i].codigo_aluno){
-            printf("%d%*c",dados_endereco_aluno.dados_aluno[i].codigo_aluno);
+            printf("%d ",dados_endereco_aluno.dados_aluno[i].codigo_aluno);
+            printf("%s ",dados_endereco_aluno.dados_aluno[i].nome);
         }else{
             continue;
         }
