@@ -1,2 +1,4 @@
 *.code-workspace
-Anotações/
+/anotacoes
+*.exe
+.gitignore
