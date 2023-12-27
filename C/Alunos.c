@@ -2,7 +2,7 @@
 #include <stdio.h>
 //VARIAVEIS
 int escolha_inicio;
-char nome_busca[100];
+int cod_busca;
 int i=0;
 int numCadastro;
 //ESTRUTURAS
@@ -13,6 +13,7 @@ typedef struct
     float nota;
     int CPF[11];
     int RG[10];
+    int codigo_aluno;
 }Aluno;
 
 typedef struct
@@ -41,31 +42,49 @@ int inicio(){
     switch (escolha_inicio)
     {
     case 1:
-        cadastro();    
+        cadastro();
+        break;
+    case 2:
+        consulta();
+        break; 
     default:
         printf("erro");
     }
 }
 void cadastro(){
-    
     printf("\nQuantos voce quer cadastrar? ");
     scanf("%d%*c",&numCadastro);
     fflush(stdin);
-    if (numCadastro>0)
+    if (numCadastro>0 && numCadastro<=5)
     {
-        // for (i = 0; i < 5; i++)
-        // {
-        // printf("%d",i);
-        // }
+        i=5-numCadastro;
+        for (i = i; i < 5; i++)
+        {
+        printf("\nQual cod do aluno? ");
+        scanf("%d",&dados_endereco_aluno.dados_aluno[i].codigo_aluno);
+        fflush(stdin);
+        printf("%d",dados_endereco_aluno.dados_aluno[i].codigo_aluno);
+        }
+    inicio();
     }else if (numCadastro>5)
     {
         printf("\nLimite de 5 cadastros.");
     }
     else{
-        printf("\nValor inválido.");
+        printf("\nValor invalido.");
     }
 }
 void consulta(){
+    printf("\nQual codigo do aluno? ");
+    scanf("%d%*c",&cod_busca);
+    for (i = 0; i < 5; i++)
+    {
+        if(cod_busca==dados_endereco_aluno.dados_aluno[i].codigo_aluno){
+            printf("%d%*c",dados_endereco_aluno.dados_aluno[i].codigo_aluno);
+        }else{
+            continue;
+        }
+    }
     
 }
 int main(){
