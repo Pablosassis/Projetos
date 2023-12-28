@@ -64,8 +64,7 @@ void cadastro(){
         scanf("%d",&dados_endereco_aluno.dados_aluno[i].codigo_aluno);
         fflush(stdin);
         printf("\nQual o nome do aluno? ");
-        scanf("%s",&dados_endereco_aluno.dados_aluno[i].nome);
-        fflush(stdin);
+        fgets(dados_endereco_aluno.dados_aluno[i].nome,200,stdin);
         }
     inicio();
     }else if (numCadastro>5)
